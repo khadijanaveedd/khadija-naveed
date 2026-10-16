@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {
@@ -7,7 +8,7 @@ int main() {
 
     cout << "Enter first number: ";
     cin >> a;
-    cout << "Enter operator (+, -, *, /): ";
+    cout << "Enter operator (+, -, *, /, ^, %): ";
     cin >> op;
     cout << "Enter second number: ";
     cin >> b;
@@ -27,6 +28,16 @@ int main() {
                 cout << "Error: cannot divide by zero" << endl;
             } else {
                 cout << "Result: " << a / b << endl;
+            }
+            break;
+        case '^':
+            cout << "Result: " << pow(a, b) << endl;
+            break;
+        case '%':
+            if (b == 0) {
+                cout << "Error: cannot divide by zero" << endl;
+            } else {
+                cout << "Result: " << fmod(a, b) << endl;
             }
             break;
         default:
